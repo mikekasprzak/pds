@@ -135,13 +135,13 @@ These should all return your server's public IP.
 On your server via ssh, download the installer script using wget:
 
 ```bash
-wget https://raw.githubusercontent.com/bluesky-social/pds/main/installer.sh
+wget https://raw.githubusercontent.com/mikekasprzak/pds/activitypds/installer.sh
 ```
 
 or download it using curl:
 
 ```bash
-curl https://raw.githubusercontent.com/bluesky-social/pds/main/installer.sh >installer.sh
+curl https://raw.githubusercontent.com/mikekasprzak/pds/activitypds/installer.sh >installer.sh
 ```
 
 And then run the installer using bash:
