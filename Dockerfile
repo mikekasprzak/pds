@@ -1,4 +1,4 @@
-FROM node:20.11-alpine3.18 as build
+FROM node:20.11-bookworm-slim AS build
 
 RUN corepack enable
 
@@ -9,9 +9,10 @@ RUN corepack prepare --activate
 RUN pnpm install --production --frozen-lockfile > /dev/null
 
 # Uses assets from build stage to reduce build size
-FROM node:20.11-alpine3.18
+FROM node:20.11-bookworm-slim
 
-RUN apk add --update dumb-init
+#RUN apk add --update dumb-init
+RUN apt-get update && apt-get install -y dumb-init
 
 # Avoid zombie processes, handle signal forwarding
 ENTRYPOINT ["dumb-init", "--"]
